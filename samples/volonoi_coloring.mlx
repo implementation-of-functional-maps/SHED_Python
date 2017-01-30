@@ -1,0 +1,8 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Voronoi Vertex Coloring">
+  <Param tooltip="The mesh whose surface is colored. For each vertex of this mesh we decide the color according the below parameters." description="To be Colored Mesh" type="RichMesh" value="0" name="ColoredMesh"/>
+  <Param tooltip="The mesh whose vertexes are used as seed points for the color computation. These seeds point are projected onto the above mesh." description="Vertex Mesh" type="RichMesh" value="0" name="VertexMesh"/>
+  <Param tooltip="If true the mesh is colored according the distance from the frontier of the voonoi diagram induced by the VertexMesh seeds." description="BackDistance" type="RichBool" value="false" name="backward"/>
+ </filter>
+</FilterScript>

@@ -1,0 +1,108 @@
+# -*- mode:python; coding:utf-8 -*-
+######################################################################
+#                       File Name: chi2_dist.py
+#                       Last Change : 2016-10-03
+#                       Editor : Katsurou Takahashi
+######################################################################
+# CHI2_DIST Computes chi-squared distance between the histograms
+#
+# Author: Yanir Kleiman, 2014
+# Editor: Katsurou Takahahsi, 2016
+#
+### Copyright (c) 2016 Katsurou Takahashi <katsurou.tkhsk@gmail.com> #
+##################################################################
+#                       Import
+##################################################################
+import sys,os # relative import 
+sys.path.append(os.pardir) # relative import 
+import numpy as np
+
+##################################################################
+#                       Method
+##################################################################
+def _( hist1, hist2 ):
+    '''
+    ##################################################################
+    # CHI2_DIST Computes chi-squared distance between the histograms
+    #
+    # Written by Yanir Kleiman, 2014
+    # Pythonized by Katsurou Takahahsi, 2016
+    ##################################################################
+    '''
+    
+    # Step 1
+    ##################################################################
+    #                          Init Settings
+    ##################################################################
+    hist1 = np.array(hist1)
+    hist2 = np.array(hist2)
+ 
+    s = hist1 + hist2
+    diff = (hist1 - hist2)*(hist1 - hist2) / s
+    diff[np.where(s == 0)] = 0
+    d = sum(diff)
+    # zeros = np.zeros(len(hist1))
+    # s2 = s[ np.where( s==0 ) ]
+
+    # ##################################################################
+    # #                          Calc Chi2Dist
+    # ##################################################################
+    # if s2 == zeros: # s が零行列かの判定 ??
+    #     diff = 0
+    # else:
+    #     diff = np.subtract( hist1 , hist2)
+    #     diff = np.divide( pow(diff, 2), s ) # 各要素を引いて、２乗してsで割る.
+    # # diff(s == 0) = 0 # if s==0 → 0 を代入
+        
+    # d = sum(diff)
+    
+    #-----------------------------------------------------------------
+    #                          Return
+    #-----------------------------------------------------------------
+    return  d
+    
+######################################################################
+#                           Main
+######################################################################
+if __name__ == '__main__':
+
+    ck.today() # time stamp
+    
+    if len(sys.argv) == 1:
+        # input example 
+        hist1 = [0.2, 0.73, 0.07]
+        hist2 = [0.12, 0.37, 0.51]
+        # output
+        func = _(hist1, hist2)
+        
+        ck.std_out_io(sys.argv[0], func, hist1, hist2)
+        
+    elif len(sys.argv) == 2:
+        if sys.argv[1] == "-help":
+            
+            ck.description(12, sys.argv[0])
+        
+            ck.function(27, 31, sys.argv[0])
+            
+        else: # ここに nargin を使えない？
+            # exec test
+            # ex) python mus_xyz.py " python mus_xyz.py "[1,2,3,4,5,6,7,8,9,10]" 4
+            list_delta = sys.argv[1].lstrip("[").rstrip("]").split(",")
+            deltas=[]
+            for delta in list_delta:
+                deltas.append(int(delta))
+        
+            # output
+            func = _(deltas)
+        
+            ck.std_out_io(sys.argv[0], func, deltas)
+            
+    else:
+        print("\nExecution Error: the valiables is invalid.\n")
+ 
+######################################################################
+#                          END
+######################################################################
+# デバッグの条件
+# 零行列かどうか？
+# 行列（配列）の行数、列数は正しいか？（複数の入力がある場合、計算可能か？等しいか？）

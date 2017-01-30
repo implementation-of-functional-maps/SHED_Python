@@ -1,0 +1,323 @@
+admin% 
+
+admin% 
+
+admin% 
+
+admin% l
+l
+10-year-goal-of-my-life.pdf	diary				meisi.ai
+2_weekly_procedure		download.jpg			meisi.png
+DC1				droznin				meisi2.png
+EB-1735W.png			emnlp15				mori-takahashi
+Icon?				emnlp2016			motoura_seminor
+NL15Sep-final-editted.pdf	gematria			my_generator.py
+NLPMTG160325			homepage			my_unittest.py
+Numerical_Recipes.pdf		informatics_room		nl_read
+SHED_inv.dat			inori.rtf			nlp_read.1
+SHED_inv_maxs.dat		ipsj.docx			nlp_read.2
+SHED_python			lcp.pptx			nlp_read.3
+Template_10.ai			lcp1				nlp_read.4
+__pycache__			linux_network			openldap
+anone				list.txt			openldap-2.4.44.tgz
+backup				mail				rcs
+bin				main.bib			schedule
+blog.2016			main.pdf			search_best_n.m
+blog.2016~			max_unit_SHED_inv.dat		shed.dat
+caous.summery			max_unit_SHED_inv_1.dat		shinoro
+class				max_unit_SHED_inv_2.dat		shirakatsu
+committed			max_unit_SHED_inv_3.dat		wallpaper
+d-house-image-change-09.key	max_unit_SHED_inv_4.dat		名刺.png
+d-house-image-change.key	meishi.png
+db-6.2.23.tar.gz		meishi2.png
+admin% 
+
+admin% 
+
+admin% l
+l
+10-year-goal-of-my-life.pdf	diary				meisi.ai
+2_weekly_procedure		download.jpg			meisi.png
+DC1				droznin				meisi2.png
+EB-1735W.png			emnlp15				mori-takahashi
+Icon?				emnlp2016			motoura_seminor
+NL15Sep-final-editted.pdf	gematria			my_generator.py
+NLPMTG160325			homepage			my_unittest.py
+Numerical_Recipes.pdf		informatics_room		nl_read
+SHED_inv.dat			inori.rtf			nlp_read.1
+SHED_inv_maxs.dat		ipsj.docx			nlp_read.2
+SHED_python			lcp.pptx			nlp_read.3
+Template_10.ai			lcp1				nlp_read.4
+__pycache__			linux_network			openldap
+anone				list.txt			openldap-2.4.44.tgz
+backup				mail				rcs
+bin				main.bib			schedule
+blog.2016			main.pdf			search_best_n.m
+blog.2016~			max_unit_SHED_inv.dat		shed.dat
+caous.summery			max_unit_SHED_inv_1.dat		shinoro
+class				max_unit_SHED_inv_2.dat		shirakatsu
+committed			max_unit_SHED_inv_3.dat		wallpaper
+d-house-image-change-09.key	max_unit_SHED_inv_4.dat		名刺.png
+d-house-image-change.key	meishi.png
+db-6.2.23.tar.gz		meishi2.png
+admin% 
+
+admin% 
+
+admin% 
+
+admin% drop
+drop
+admin% l
+l
+10-year-goal-of-my-life.pdf	diary				meisi.ai
+2_weekly_procedure		download.jpg			meisi.png
+DC1				droznin				meisi2.png
+EB-1735W.png			emnlp15				mori-takahashi
+Icon?				emnlp2016			motoura_seminor
+NL15Sep-final-editted.pdf	gematria			my_generator.py
+NLPMTG160325			homepage			my_unittest.py
+Numerical_Recipes.pdf		informatics_room		nl_read
+SHED_inv.dat			inori.rtf			nlp_read.1
+SHED_inv_maxs.dat		ipsj.docx			nlp_read.2
+SHED_python			lcp.pptx			nlp_read.3
+Template_10.ai			lcp1				nlp_read.4
+__pycache__			linux_network			openldap
+anone				list.txt			openldap-2.4.44.tgz
+backup				mail				rcs
+bin				main.bib			schedule
+blog.2016			main.pdf			search_best_n.m
+blog.2016~			max_unit_SHED_inv.dat		shed.dat
+caous.summery			max_unit_SHED_inv_1.dat		shinoro
+class				max_unit_SHED_inv_2.dat		shirakatsu
+committed			max_unit_SHED_inv_3.dat		wallpaper
+d-house-image-change-09.key	max_unit_SHED_inv_4.dat		名刺.png
+d-house-image-change.key	meishi.png
+db-6.2.23.tar.gz		meishi2.png
+admin% cd SHED_python/auto/
+cd SHED_python/auto/
+admin% l
+l
+AllSegmentsBoundingBoxes.py	MakeFigureNice.py		build_rotation_matrix.py
+AllSegmentsD2.py		MatchShapes.py			check.py
+AllSegmentsDescriptors.py	ReadSegmentedShape.py		matlab.py
+BatchMatch.py			RenderMatchingFigure.py		mesh_read_off.py
+BatchMatchSquare.py		ShedFromList.py			mesh_rotate.py
+BatchSHEDfromFiles.py		ShedFromMatching.py		nargin.py
+BatchShedFromMatching.py	ShowMatch.py			readme.py
+BatchShedFromMatchingSquare.py	ShowMatching.py			style.py
+Descs				__pycache__
+admin% python
+python
+Python 3.5.0 (default, Jun  6 2016, 17:54:57) 
+[GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> IOBase.fileno(matlab.py)
+IOBase.fileno(matlab.py)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'IOBase' is not defined
+>>> fire
+fire
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'fire' is not defined
+>>> 
+admin% fire
+fire
+admin% f = open("matlab.py")
+f = open("matlab.py")
+zsh: number expected
+admin% python
+python
+Python 3.5.0 (default, Jun  6 2016, 17:54:57) 
+[GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> f = open("matlab.py")
+f = open("matlab.py")
+>>> IOBase.fileno(matlab.py)
+IOBase.fileno(matlab.py)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'IOBase' is not defined
+>>> io.IOBase.fileno(matlab.py)
+io.IOBase.fileno(matlab.py)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'io' is not defined
+>>> import io
+import io
+>>> io.IOBase.fileno(matlab.py)
+io.IOBase.fileno(matlab.py)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'matlab' is not defined
+>>> io.IOBase.fileno("matlab.py")
+io.IOBase.fileno("matlab.py")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: descriptor 'fileno' requires a '_io._IOBase' object but received a 'str'
+>>> io.IOBase.fileno()
+io.IOBase.fileno()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: descriptor 'fileno' of '_io._IOBase' object needs an argument
+>>> io.IOBase.fileno("matlab.py")
+io.IOBase.fileno("matlab.py")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: descriptor 'fileno' requires a '_io._IOBase' object but received a 'str'
+>>> io.IOBase.fileno(f)
+io.IOBase.fileno(f)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: fileno
+>>> f = open("matlab.py")
+f = open("matlab.py")
+>>> io.IOBase.fileno(f)
+io.IOBase.fileno(f)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: fileno
+>>> import io
+import io
+>>> raw = io.BytesIO()
+raw = io.BytesIO()
+>>> buffered = io.BufferedWriter(raw)
+buffered = io.BufferedWriter(raw)
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>>  x = io.TextIOWrapper(buffered, encoding='utf-8', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> Traceback (most recent call last):
+  File "<stdin>", line 1
+    Traceback (most recent call last):
+                         ^
+SyntaxError: invalid syntax
+>>>   File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1
+    File "<stdin>", line 1, in <module>
+    ^
+IndentationError: unexpected indent
+>>> LookupError: unknown encoding: monty
+  File "<stdin>", line 1
+    LookupError: unknown encoding: monty
+               ^
+SyntaxError: invalid syntax
+>>> >>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+  File "<stdin>", line 1
+    >>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+     ^
+SyntaxError: invalid syntax
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> Traceback (most recent call last):
+  File "<stdin>", line 1
+    Traceback (most recent call last):
+                         ^
+SyntaxError: invalid syntax
+>>>   File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1
+    File "<stdin>", line 1, in <module>
+    ^
+IndentationError: unexpected indent
+>>> LookupError: unknown encoding: monty
+  File "<stdin>", line 1
+    LookupError: unknown encoding: monty
+               ^
+SyntaxError: invalid syntax
+>>> >>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+  File "<stdin>", line 1
+    >>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+     ^
+SyntaxError: invalid syntax
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> Traceback (most recent call last):
+  File "<stdin>", line 1
+    Traceback (most recent call last):
+                         ^
+SyntaxError: invalid syntax
+>>>   File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1
+    File "<stdin>", line 1, in <module>
+    ^
+IndentationError: unexpected indent
+>>> LookupError: unknown encoding: monty
+  File "<stdin>", line 1
+    LookupError: unknown encoding: monty
+               ^
+SyntaxError: invalid syntax
+>>> >>>  x = io.TextIOWrapper(buffered, encoding='utf-8', errors="strict", newline=None)
+  File "<stdin>", line 1
+    >>>  x = io.TextIOWrapper(buffered, encoding='utf-8', errors="strict", newline=None)
+     ^
+SyntaxError: invalid syntax
+>>>  x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+ x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+  File "<stdin>", line 1
+    x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+    ^
+IndentationError: unexpected indent
+>>> x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='monty', errors="strict", newline=None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+LookupError: unknown encoding: monty
+>>> x = io.TextIOWrapper(buffered, encoding='utf-8', errors="strict", newline=None)
+x = io.TextIOWrapper(buffered, encoding='utf-8', errors="strict", newline=None)
+>>> x
+x
+<_io.TextIOWrapper encoding='utf-8'>
+>>> io.IOBase.fileno(f)
+io.IOBase.fileno(f)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: fileno
+>>> x = io.IOBase.fileno(f)
+x = io.IOBase.fileno(f)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: fileno
+>>> x = io.IOBase.flush(f)
+x = io.IOBase.flush(f)
+>>> x
+x
+>>> x = io.IOBase.fileno(f)
+x = io.IOBase.fileno(f)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+io.UnsupportedOperation: fileno
+>>> f.fileno()
+f.fileno()
+4
+>>> 

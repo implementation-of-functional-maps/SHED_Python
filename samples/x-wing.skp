@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link REL="shortcut icon" HREF="img/favicon.ico" TYPE="image/x-icon">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=955">
+  <meta name="referrer" content="origin">
+  <script src="js/startup_7f0ab62.js"></script>
+  <script src="js/lib/qrcode.js"></script>
+  <!-- Title is specifically omitted, as it will be added at runtime. -->
+</head>
+<body><div id="body-wrapper">
+
+<div id="soy-header-panel"></div>
+<div id ="news-bar-container"></div>
+
+<div id="banner-panel" class="banner-panel hidden">
+  <a href="#" id="banner-link" class="banner-link hidden"></a>
+</div>
+
+<div id="edit-banner-panel" class="edit-banner-panel hidden">
+  <div id="banner-upload-controls" class="banner-upload-controls">
+    <form class="hidden" enctype="multipart/form-data" method="POST"
+        action="/warehouse/SetBinary" id="banner-upload-form">
+      <label id="binary-label" class="line-label upload-required-label"><!-- SketchUp File --></label>
+      <input type="file" name="cbanner" id="banner-upload-input"
+          class="lockable"/>
+    </form>
+
+    </div>
+  <div id="banner-url-form" class="banner-url-form">
+    <input type="text" id="banner-url" class="banner-url-input" />
+  </div>
+</div>
+
+<div id="error-content">
+  <h1 id="error-header"><!-- Error --></h1>
+  <span id="error-message"></span>
+</div>
+
+<div id="content">
+
+  <div id="metadata-panel">
+
+    <div id="edit-controls-container" class="edit-controls-container">
+    </div>
+
+    <div class="download-controls" id="download-controls">
+      <span class="container-button-like">
+        <span class="button-like" id="button-like"></span>
+      </span>
+      <span class="button button-download" id="button-download">
+        <span id="icon-downloads-white"></span>
+        <span id="button-download-text"><!-- Download --></span>
+      </span>
+      <div id="download-select" class="download-select"></div>
+    </div>
+
+    <div id="metadata" class="metadata-container model-metadata">
+      <div class="metadata-buttons" id="metadata-buttons">
+        <span id="button-image-view"></span>
+        <span id="button-swivel-view"></span>
+        <span id="button-map-view" class="hidden"></span>
+        <span id="button-chart-view"></span>
+      </div>
+      <div class="metadata-fields">
+        <div class="metadata-field" id="field-downloads">
+          <div class="metadata-left-cell">
+            <h3 id="header-downloads"><!-- Downloads --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="downloads" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field" id="field-likes">
+          <div class="metadata-left-cell">
+            <h3 id="header-likes"><!-- Likes --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="likes" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field">
+          <div class="metadata-left-cell">
+            <h3 id="header-filesize"><!-- .skp File Size --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="filesize" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field">
+          <div class="metadata-left-cell">
+            <h3 id="header-polygons"><!-- Polygons --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="polygons" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field">
+          <div class="metadata-left-cell">
+            <h3 id="header-materials"><!-- Materials --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="materials" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field">
+          <div class="metadata-left-cell">
+            <h3 id="header-created"><!-- Uploaded --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="created" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+        <div class="metadata-field">
+          <div class="metadata-left-cell">
+            <h3 id="header-modified"><!-- Modified --></h3>
+          </div>
+          <div class="metadata-right-cell">
+            <span id="modified" class="metadata-value">&nbsp;</span>
+          </div>
+        </div>
+      </div>
+      <div class="metadata-share" id="share-panel">
+        <div class="metadata-share-tabs" id="metadata-share-tabs">
+          <div class="metadata-social-tab tab-selected" id="metadata-social-tab">
+          </div><div class="metadata-embed-tab" id="metadata-embed-tab"></div>
+        </div>
+        <div class="metadata-share-content" id="metadata-share-content">
+          <div class="metadata-social-panel" id="metadata-social-panel">
+            <span id="metadata-social-button1">
+            </span><span id="metadata-social-button2">
+            </span><span id="metadata-social-button3">
+            </span><span id="metadata-social-button4"></span>
+          </div>
+          <div class="metadata-embed-panel hidden" id="metadata-embed-panel">
+            <span id="button-image-embed">
+            </span><span id="button-3d-embed"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="user-card-container"></div>
+
+    <div id="tags-container" class="metadata-container">
+      <div id="header-tags" class="metadata-section-title"><!-- Tags --></div>
+      <div class="metadata-content editable">
+        <div id="tags" class="display-field tags-content"></div>
+        <input type="text" id="tags-edit" class="tags-edit editable-field"/>
+      </div>
+    </div>
+
+    <div id="add-to-panel">
+      <div id="add-to-controls">
+        <span id="add-to-select-container"></span><span class="button-small" id="add-to-button">
+          <span id="add-to-button-image"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-content" class="main-content-model-page">
+
+    <div class="editable">
+      <div id="privacy-panel" class="privacy-panel editable-field">
+        <label id="privacy-edit-label" class="line-label upload-required-label"><!-- Privacy --></label>
+        <input id="is-public" class="checkbox" name="isPrivate"
+               type="RADIO" value="0"/>
+        <label id="is-public-label" class="inline-label checkbox-label"
+               for="is-public"><!-- Public --></label>
+        <input id="is-private" class="checkbox" name="isPrivate"
+               type="RADIO" value="1"/>
+        <label id="is-private-label" class="inline-label checkbox-label"
+               for="is-private"><!-- Private --></label>
+      </div>
+    </div>
+
+    <div id="title-editable" class="editable">
+      <div class="display-field">
+        <div class="model-title">
+          <h1 id="title">&nbsp;</h1>
+        </div>
+        <div id="badges-panel" class="badges-panel"></div>
+      </div>
+
+      <div class="editable-field editable-row">
+        <label id="title-edit-label" class="line-label upload-required-label"><!-- Title --></label>
+        <input type="text" id="title-edit" class="editmode-width"/>
+      </div>
+    </div>
+
+    <div id="model-upload" class="editable">
+      <div class="editable-field editable-row">
+        <label id="model-upload-label" class="line-label"><!-- SketchUp File --></label>
+        <div id="upload-widget-model-controls" class="model-container editmode-width">
+          <div id="selected-file" class="display-field"><!-- Selected File --></div>
+          <form id="model-edit-st-form" enctype="multipart/form-data" method="POST" action="/warehouse/SetBinary" class="hidden">
+            <input id="st-upload" type="file" name="binary">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="editable">
+      <div class="editable-field editable-row">
+        <label id="slideshow-edit-label" class="line-label"><!-- Thumbnail --></label>
+        <div id="slideshow-edit-panel" class="slideshow-edit-panel"></div>
+        <div style="clear: left;"></div>
+      </div>
+      <div id="slideshow-panel" class="slideshow-panel display-field"></div>
+    </div>
+
+    <div id="editable-description" class="editable">
+      <div id="description" class="metafield display-field"></div>
+      <div class="editable-field editable-row">
+        <label id="description-edit-label" class="line-label"><!-- Description --></label>
+        <textarea id="description-edit" class="editmode-width""></textarea>
+      </div>
+    </div>
+
+    <div id="editable-url" class="metafield editable">
+      <div id="url-label" class="display-field"><!-- For more information: --></div>
+      <div id="url" class="display-field"></div>
+      <div class="editable-field editable-row">
+        <label id="url-edit-label" class="line-label"><!-- URL --></label>
+        <input type="text" id="url-edit" class="editmode-width"/>
+      </div>
+    </div>
+
+    <div class="editable">
+      <div class="editable-field is-printable-extra-padding-model-edit hidden" id="is-printable-container">
+        <label for="is-printable" id="printable-label" class="line-label printable-line-label-model-edit"><!-- Printable --></label>
+
+        <!-- This input element needs a type of "checkbox", *NOT* "radio". -->
+        <input type="checkbox" id="is-printable" name="printable"
+               value="isPrintable" class="checkbox lockable printable-checkbox"/>
+
+        <label for="is-printable" id="i-want-3d"
+               class="line-label checkbox-label printable-checkbox-label model-edit">
+          <!-- I want this to be 3D printable. --></label>
+        <span class="powered-by-materialise model-edit" id="powered-by-materialise-container">
+          <span id="powered-by" class="powered-by powered-by-model-edit"><!-- Powered by --></span>
+          <img src="./img/MaterialiseLogo_48px.png" alt="Materialise"
+               class="materialise"/>
+        </span>
+
+        <div class="clear-float"></div>
+      </div>
+    </div>
+
+    <div class="editable">
+      <div id="commenting-panel" class="commenting-panel editable-field">
+        <label id="allow-commenting-edit-label"
+               class="line-label upload-required-label"><!-- Allow commenting? --></label>
+
+        <input id="is-commenting-enabled" class="checkbox" name="isCommentingEnabled"
+               type="RADIO" value="1"/>
+        <label id="commenting-yes-label" class="inline-label checkbox-label"
+               for="is-commenting-enabled"><!-- Yes --></label>
+
+        <input id="is-commenting-disabled" class="checkbox" name="isCommentingEnabled"
+               type="RADIO" value="0"/>
+        <label id="commenting-no-label" class="inline-label checkbox-label"
+               for="is-commenting-disabled"><!-- No --></label>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 id="header-related-models"><!-- Related Models --></h2>
+  <div id="related-models-container"></div>
+
+
+  <h2 id="header-contained-in"><!-- Contained In --></h2>
+  <div id="collection-container"></div>
+
+  <div id="content-bottom-pad"></div>
+
+  <div id="comments-container" class="comments-widget"></div>
+  <div id="report-abuse-container"></div>
+
+</div>
+
+<div id="footer-panel"></div>
+
+</div>
+<script>
+  var modelPage = new frontend.ModelPage();
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5TTFZM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5TTFZM');</script>
+<!-- End Google Tag Manager -->
+</body>
+</html>

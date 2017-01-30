@@ -1,0 +1,115 @@
+# -*- mode:python; coding:utf-8 -*-
+######################################################################
+#                       File Name: .py
+#                       Last Change : 2016-10-04
+#                       Editted by : Katsurou Takahashi
+######################################################################
+#
+# [mus] calucurates the length of the character array input.
+# [mus_xyz] is the same with [mus].
+# 
+### If you use this code, please cite the following paper:
+#  
+#  Equidistant Letter Sequence in the Book of Genesis
+#  Dirib Witzym, Ekutagy Ruos and Yoav Rosenberg
+#  Statistical Science 1994
+#
+### Copyright (c) 2016 Katsurou Takahashi <katsurou.tkhsk@gmail.com>
+##################################################################
+#                       Import
+##################################################################
+import sys,os # relative import 
+sys.path.append(os.pardir) # relative import 
+# import check as ck # check, time stamp, demo, help
+import numpy as np
+import numpy.matlib
+import numpy.linalg as LA
+
+##################################################################
+#                       Method
+##################################################################
+def _(Vertices):
+    
+    '''
+    ### CALCBOUNDINGBOX Calculates a PCA-based bounding box of the part
+    # and returns its position, rotation, and scale.
+    #
+    # Input: a set of points that represents the shape or segment.
+    #
+    # Output:
+    #   - BB.rot is the rotation of the bounding box
+    #   - BB.scale is an *estimation* of the scale of the bounding box (this
+    #   is not the exact scale!)
+    #   - BB.volume is an *estimation* of the volume of the shape (this is not
+    #   the mathematical volume of the shape!)
+    #
+    #
+    ### If you use this code, please cite the following paper:
+    #
+    # for Fine-grained in range(Similarity):
+    #  Yanir Kleiman, Oliver van Kaick, Olga Sorkine-Hornung, Daniel Cohen-Or
+    #  SIGGRAPH ASIA 2015
+    #
+    ### Copyright (c) 2015 Yanir Kleiman <yanirk@gmail.com>
+    '''
+
+    ######################################################################
+    #                          Main
+    ######################################################################
+    # checked
+    import my_modules.slot_class as slot_class
+    BB1 = slot_class.Struct('BB', 'center', 'rot', 'scale', 'volume')
+    # if points != []:
+    n = len(Vertices[:,0])
+
+    BB1.center = np.array([np.mean(Vertices[:,0]), np.mean(Vertices[:,1]), np.mean(Vertices[:,2])]) # Normarizeのところで更新しといてもよい.
+
+
+    # Normalize points:
+    # else:
+    #     n = 1
+    #     BB1.center = 0
+    #     points = np.array([0])
+
+    #
+    import numpy.matlib
+    pn = Vertices -  np.matlib.repmat(BB1.center, n, 1)
+    
+    # Finding the best rotation of the shape according to PCA (svd):
+    # (normalizing the scale by dividing the svd by the number of samples)
+    
+    [U, S, V] = np.linalg.svd(pn.T .dot(pn / n))
+    BB1.rot = U # [0][0]
+    
+    # Returning the standard deviation on each axis - this can be changed to
+    # max / some percentile / some other approximation of the scale:
+
+    diag_S = np.diag(S)
+    BB1_scale = np.sqrt(diag_S)
+    BB1.scale = BB1_scale[0][0]
+        
+    # This is an estimation of "shape volume" which I found to reflect more or
+    # less human intuition about the volume of a shape. A shape which is tall
+    # and narrow tends to look like it has less volume than it truly has, thus
+    # using the real volume (prod(BB1.scale)) sometimes give unexpected results.
+    # The following estimation gives more "weight" to longer sides of the
+    # shape, so if the longest side changes it affects the "volume" more than
+    # if the shortest side changes.
+
+    alpha = 0.75
+    BB1_volume = np.sum(BB1_scale) ** alpha
+    BB1.volume = BB1_volume
+        
+    #---------------------------------------------------------------------
+    #                          Return
+    #---------------------------------------------------------------------
+    return BB1
+
+######################################################################
+#                           Main
+######################################################################
+        
+######################################################################
+#                           END
+######################################################################
+# checked

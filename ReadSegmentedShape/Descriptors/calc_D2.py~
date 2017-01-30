@@ -1,0 +1,119 @@
+# -*- mode:python; coding:utf-8 -*-
+######################################################################
+#                       File Name: calc_D2.py
+#                       Last Change : 2016-10-03
+#                       Editor : Katsurou Takahashi
+######################################################################
+#  This function calculates D2 descriptor of a mesh.
+#  See: Shape Distributions, Osada et al.
+#
+#  The shape is sampled according to the respective area of each face.
+#
+######################################################################
+#  Written by Noa Fish, 2013
+#  Editted by Katsurou Takahashi Sep Japan 2016
+#
+### Copyright (c) 2016 Katsurou Takahashi <katsurou.tkhsk@gmail.com> #
+##################################################################
+#                       Import
+##################################################################
+import sys,os # relative import 
+sys.path.append(os.pardir) # relative import 
+# import check as ck # check, time stamp, demo, help
+import numpy as np
+
+##################################################################
+#                       Method
+##################################################################
+def _(Shape, Segment):
+    '''
+    ######################################################################
+    #   This function calculates D2 descriptor of a mesh.
+    # See: Shape Distributions, Osada et al.
+    #
+    # The shape is sampled according to the respective area of each face.
+    #
+    # Written by Noa Fish, 2013
+    # Editted by Katsurou Takahashi Sep Japan 2016
+    ######################################################################
+    '''
+    import numpy as np
+    # Step 0
+    ##################################################################
+    #                       Check the Input
+    ##################################################################
+    # for item in mesh:
+    #     for elem in item:
+    #         ck.input_int(elem)
+
+    # Step 1
+    ##################################################################
+    #                          Init Setting
+    ##################################################################
+    n = 1024
+    b = 64
+    seed_num2 = 12
+    
+    import ReadSegmentedShape.Descriptors.computeArea as computeArea
+    faces = Segment.Faces 
+    vertices = Shape.Vertices 
+    areas = computeArea._(Shape, Segment)
+    
+    cum_areas = np.cumsum(areas)
+    cum_areas = cum_areas - cum_areas[0:1]
+    cum_areas = cum_areas / cum_areas[len(cum_areas)-1:len(cum_areas)]
+    # initial setting of dist
+    dists = np.zeros((n,1))
+
+    # Step2
+    ######################################################################
+    #                          Normalize vertices
+    ######################################################################
+    import numpy.random
+    import ReadSegmentedShape.Descriptors.binarysearchnumvec.binarysearch as binarysearch
+    import numpy.linalg as LA
+    
+    for i in range(n):
+        np.random.seed(seed_num2)
+        r = np.random.rand(2,1)
+        index1 = binarysearch._(cum_areas,r[0])
+
+        if faces == []:
+            p1 = np.array([0,1,2]) # ?? ここは一時的な設定
+            p2 = np.array([0,1,2]) # ?? ここは一時的な設定
+        else:
+            index1 = 0
+            vert1 = faces[index1]
+            index2 = binarysearch._(cum_areas,r[1])
+            vert2 = faces[index2]
+            if len(vert1) != 0 and len(vert2) != 0:
+                a1 = vertices[vert1[0]]
+                b1 = vertices[vert1[1]]
+                c1 = vertices[vert1[2]]
+                np.random.seed(seed_num2)
+                r2 = np.random.rand(2,1)
+                p1 = (1 - np.sqrt(r2[0]))* a1 + np.sqrt(r2[0])*(1-r2[1])*b1 + np.sqrt(r2[0])*r2[1]*c1
+                a2 = vertices[vert2[0]]
+                b2 = vertices[vert2[1]]
+                c2 = vertices[vert2[2]]
+                np.random.seed(seed_num2)
+                r2 = np.random.rand(2,1)
+                p2 = (1-np.sqrt(r2[0]))*a2 + np.sqrt(r2[0])*(1-r2[1])*b2 + np.sqrt(r2[0])*r2[1]*c2
+                d = LA.norm(p1 - p2, 2) 
+                dists[i] = d
+
+        d2 = np.histogram(dists, b)[0] / n # 1024 上記で定義されてる。 b も同様。
+
+    #---------------------------------------------------------------------
+    #                          Return
+    #---------------------------------------------------------------------
+    return d2       # 高々1024 個の要素を持つリストオブジェクト. 各値は1以下のfloat型
+
+######################################################################
+#                           Main
+######################################################################
+  
+######################################################################
+#                          END
+######################################################################
+# checked

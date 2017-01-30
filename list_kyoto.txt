@@ -1,0 +1,2 @@
+data/model_pixer_stand
+data/model_jaguchi

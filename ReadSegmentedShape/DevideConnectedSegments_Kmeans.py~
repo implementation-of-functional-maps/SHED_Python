@@ -1,0 +1,26 @@
+def _(dict_ColoredFaces):
+    """ make segments from non connected and same colored segment Fs.
+        It returns connected and same colored segments Segments.
+    """
+    from itertools import chain
+    # devide the same colored Segments from ColoredFaces dict_ColoredFaces.
+    Segments = []
+    Fss = []
+    Colors = list(set(dict_ColoredFaces.values()))
+    print(Colors)
+    for color_label in Colors:
+        Fs_temp = []
+        for face, color_face in dict_ColoredFaces.items(): # for 回さずに得たい。
+            # print(face, color_face)
+            if color_face == color_label:
+                face_arr = face.split(' ')
+                
+                Fs_temp.append(face_arr)
+        Fss.append(Fs_temp)
+        print("1")
+    for Fs in Fss:
+        
+    SegmentedVertices = dict_ColoredFaces.keys()
+    print(len(Fss))
+            
+    return [Colors, Segments, SegmentedVertices]
